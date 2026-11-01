@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "EDUSRC 证书礼品搜索",
+  "version": "1.1.0",
+  "description": "建立公开礼品详情的本地索引，搜索证书名称、学校与描述，包含剩余数量为 0 的礼品。",
+  "minimum_chrome_version": "111",
+  "permissions": ["storage"],
+  "host_permissions": ["https://src.sjtu.edu.cn/*"],
+  "action": { "default_title": "打开证书礼品搜索", "default_icon": {"16": "icons/16.png", "32": "icons/32.png"} },
+  "icons": {"16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png"},
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://src.sjtu.edu.cn; img-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+  }
+}
